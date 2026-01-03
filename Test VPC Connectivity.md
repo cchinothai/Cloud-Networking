@@ -44,6 +44,9 @@ I fixed this error by adding a new rule that allowed us to connect via SSH. We s
 
 ![Image](http://learn.nextwork.org/enthusiastic_turquoise_radiant_monstera_deliciosa/uploads/aws-networks-connectivity_1cbb1b88)
 
+<img width="781" height="828" alt="image" src="https://github.com/user-attachments/assets/626d5872-6e07-41a8-b1f6-9ad7593f3047" />
+
+
 ---
 
 ## Connectivity Between Servers
@@ -64,11 +67,16 @@ If you don't get any replies (that's our situation right now), or if the replies
 
 ## Troubleshooting Connectivity
 
+<img width="1212" height="843" alt="image" src="https://github.com/user-attachments/assets/7ed052f4-80ee-42ad-8723-637e20a61ec0" />
+
+
 I troubleshooted this error by looking at the Network ACL for our private server and realized that it did not allow ICMP IPv4 traffic, so we added inbound/output rules for the NACL that allowed All ICMP IPv4 with our public subnet's CIDR block as the source. 
 
 I then updated our private server's security group to also allow this ICMP IPv4 traffic.  
 
 ![Image](http://learn.nextwork.org/enthusiastic_turquoise_radiant_monstera_deliciosa/uploads/aws-networks-connectivity_4a9e8014)
+
+<img width="937" height="830" alt="image" src="https://github.com/user-attachments/assets/58cccc0a-d3e0-478e-a0f7-3957950c7053" />
 
 ---
 
